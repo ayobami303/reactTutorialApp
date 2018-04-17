@@ -22,15 +22,15 @@ class QRCodeScannerView extends Component{
 			this.setState({
 				path: data.uri
 			})
-			console.log(data.uri)
+			console.log(data.base64)
 		}
 	}
 
 	renderImage() {
     return (
-      <View>
+      <View style={{flex:1}}>
         <Image
-          source={{ uri: this.state.path }}
+          source={{ uri:this.state.path }}
           style={styles.iPreview}
         />
         <Text

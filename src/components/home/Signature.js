@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {View, StyleSheet, Text} from 'react-native'
 import SignatureCapture from 'react-native-signature-capture'
+import { Actions } from 'react-native-router-flux'
 
 class Signature extends Component{
 
@@ -10,11 +11,17 @@ class Signature extends Component{
 	}
 
 	_onSaveEvent = (result) =>{
-		console.log(result)
-		alert(result.encoded)
+		// console.log(result)
+		const setSignature = this.props.navigation.state.params.action
+		// alert(result.encoded)
+		if(setSignature){
+			setSignature(result.encoded)
+			Actions.pop()
+		}
 	}
 
 	render() {
+
 		return (
 			<View style={{flex:1, flexDirection:"column"}}>
 				<Text>Pls Sign Here</Text>

@@ -11,9 +11,12 @@ class ModalExample extends Component {
 	render(){
 		return(
 			<View style={styles.container}>
-				<Modal animationType = {"slide"} transparent = {false} 
+				<Modal 
+					animationType = {"slide"} 
+					transparent = {false}
 					visible = {this.state.modalVisible}
-					onRequestClose = {() => { console.log("Modal has been closed")}}>
+					onRequestClose = {() => { console.log("Modal has been closed")}}
+				>
 					<View style = {styles.modal} >
 						<Text style ={styles.text}>modal is opened!</Text>
 
@@ -48,7 +51,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		backgroundColor: '#ede3f3',
 		padding: 100,
-		marginTop: 20
+		marginTop: 20,
 	},
 	text:{
 		color: '#3f2949'

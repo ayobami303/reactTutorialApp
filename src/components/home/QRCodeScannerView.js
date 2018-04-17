@@ -16,7 +16,7 @@ class QRCodeScannerView extends Component{
 	_onSuccess = (e) =>{
 		// this.scanner.reactivate()
 		alert(e.data)
-		Actions.form()
+		Actions.form({data:e.data})
 		// Linking
 		// .openURL(e.data)
 		// .catch(error => {
