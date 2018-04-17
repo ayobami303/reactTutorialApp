@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, ScrollView, Text, TouchableOpacity } from 'react-native';
 import PresentationalComponent from './PresentationalComponent.js';
 import List from './List.js';
 import Input from './Input.js';
@@ -50,8 +50,25 @@ const Home = () => {
 		Actions.scrollView()
 	}
 
+	const goToSignature = () =>{
+		Actions.signature()
+	}
+
+	const goToQrcodescanner = () =>{
+		Actions.qrcodescanner()
+	}
+
+	const goToCamera = () =>{
+		Actions.camera()
+	}
+
+	const goToForm = () =>{
+		Actions.form()
+	}
+
 	return (
 		<View>
+		<ScrollView>
 			<View>
 				<TouchableOpacity style = {{ margin: 12 }} onPress = {goToAbout} >
 					<Text> Go To About </Text>
@@ -97,6 +114,28 @@ const Home = () => {
 					<Text> Go To Scroll View  </Text>
 				</TouchableOpacity>
 			</View>
+			<View>
+				<TouchableOpacity style = {{ margin: 12 }} onPress = {goToSignature} >
+					<Text> Go To Signature View  </Text>
+				</TouchableOpacity>
+			</View>
+			<View>
+				<TouchableOpacity style = {{ margin: 12 }} onPress = {goToQrcodescanner} >
+					<Text> Go To QRCodeScanner View  </Text>
+				</TouchableOpacity>
+			</View>
+			<View>
+				<TouchableOpacity style = {{ margin: 12 }} onPress = {goToCamera} >
+					<Text> Go To Camera View  </Text>
+				</TouchableOpacity>
+			</View>
+
+			<View>
+				<TouchableOpacity style = {{ margin: 12 }} onPress = {goToForm} >
+					<Text> Go To Form View  </Text>
+				</TouchableOpacity>
+			</View>
+			</ScrollView>
 		</View>
 	)
 }
